@@ -5,10 +5,11 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import Reducers from "./Reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
 const reduxStore = createStore(
   Reducers,
-  composeWithDevTools(applyMiddleware())
+  composeWithDevTools(applyMiddleware(thunk))
 );
 
 ReactDom.render(
